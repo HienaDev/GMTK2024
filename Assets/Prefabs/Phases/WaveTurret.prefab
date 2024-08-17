@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3835316778367628917
 Transform:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1048e8b933ea045bb55176670cd2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfShots: 5
+  numberOfShots: 15
   chanceOfParryable: 50
   stuckToTurret: 0
   shotPrefabs:
@@ -53,6 +53,10 @@ MonoBehaviour:
   - {fileID: 4492140589247540426, guid: 16b7341afc42b9849a7c778339e6d0f9, type: 3}
   - {fileID: 5106616910350402246, guid: d51dea5f963485a4da49809d2852e09c, type: 3}
   shotSpeed: 0
-  shootingRate: 1
+  randomRate: 0
+  shootingRate: 3
   rotatingShot: 0
   rotationValue: 5
+  doAfterShooting:
+    m_PersistentCalls:
+      m_Calls: []
