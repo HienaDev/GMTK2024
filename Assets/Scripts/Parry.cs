@@ -11,12 +11,16 @@ public class Parry : MonoBehaviour
     private Boolean isDying;
     private Boolean isImmune;
     private Animator animator;
+    [SerializeField]
+    private float immunityTimer;
+    private SpriteRenderer sr;
     
     // Start is called before the first frame update
     void Start()
     {
         isParrying=false;
         animator = gameObject.GetComponent<Animator>();
+        sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -46,6 +50,25 @@ public class Parry : MonoBehaviour
         Debug.Log("UnParry");
     }
 
+    public void ActivateImmunity()
+    {
+        isImmune=true;
+        sr.color = Color.red;
+        StartCoroutine(Immunity());
+    }
+
+    public void DeactivateImmunity()
+    {
+        isImmune=false;
+        sr.color = Color.white;
+    }
+
+    private IEnumerator Immunity()
+    {
+        yield return new WaitForSeconds(immunityTimer);
+        DeactivateImmunity();
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if(col.gameObject.GetComponent<Shot>())
@@ -59,16 +82,21 @@ public class Parry : MonoBehaviour
             }
             else
             {
-                Debug.Log("Hit");
-                if(!isDying)
+                if(!isImmune)
                 {
-                    isDying=true;
-                    Debug.Log("isDying");
-                }else
-                {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-                    Debug.Log("Died, Reloading");
+                    Debug.Log("Hit");
+                    if(!isDying)
+                    {
+                        isDying=true;
+                        ActivateImmunity();
+                        Debug.Log("isDying");
+                    }else
+                    {
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        Debug.Log("Died, Reloading");
+                    }
                 }
+                
             }
         }
     }
