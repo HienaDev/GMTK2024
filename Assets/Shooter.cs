@@ -5,8 +5,12 @@ using UnityEngine;
 
 public class Shooter : MonoBehaviour
 {
+
+    [SerializeField] private int numberOfShots;
+    private int shotsFired = 0;
+
     [SerializeField] private bool stuckToTurret;
-    [SerializeField] private GameObject shotPrefab;
+    [SerializeField] private GameObject[] shotPrefabs;
     [SerializeField] private float shotSpeed = 10f;
     [SerializeField] private float shootingRate = 0.1f;
     private float justShot;
@@ -26,22 +30,31 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time - justShot > shootingRate)
+        if (Time.time - justShot > shootingRate && shotsFired < numberOfShots)
         {
+            shotsFired++;
+
             justShot = Time.time;
             GameObject shotClone = null;
+
             if(stuckToTurret)
             {
-                shotClone = Instantiate(shotPrefab, transform);
+                shotClone = Instantiate(shotPrefabs[Random.Range(0, shotPrefabs.Length)], transform);
             }
             else
             {
-                shotClone = Instantiate(shotPrefab);
+                shotClone = Instantiate(shotPrefabs[Random.Range(0, shotPrefabs.Length)]);
             }
 
-            shotClone.GetComponent<Rigidbody2D>().velocity = transform.right * shotSpeed;
+            Rigidbody2D shotClonrRb = shotClone.GetComponent<Rigidbody2D>();
+            
+            if(shotClonrRb != null)
+                shotClonrRb.velocity = transform.right * shotSpeed;
+
             shotClone.transform.position = transform.position;
-            shotClone.GetComponentInChildren<ShotMother>().gameObject.transform.Rotate(shotRotation);
+
+            if (rotatingShot) 
+                shotClone.GetComponentInChildren<ShotMother>().gameObject.transform.Rotate(shotRotation);
 
             shotRotation += shotRotationIncrement;
         }

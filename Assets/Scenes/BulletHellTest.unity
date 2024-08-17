@@ -123,6 +123,61 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &84288033
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 84288035}
+  - component: {fileID: 84288034}
+  m_Layer: 0
+  m_Name: WaveTurret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &84288034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84288033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1048e8b933ea045bb55176670cd2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfShots: 5
+  stuckToTurret: 0
+  shotPrefabs:
+  - {fileID: 918832489618450682, guid: 07ea6e5c5423ca748acc4fa2a4a023c1, type: 3}
+  - {fileID: 4874035531707543826, guid: b8a6e6d8ae7f69242996666bd3e93e51, type: 3}
+  - {fileID: 4492140589247540426, guid: 16b7341afc42b9849a7c778339e6d0f9, type: 3}
+  - {fileID: 5106616910350402246, guid: d51dea5f963485a4da49809d2852e09c, type: 3}
+  shotSpeed: 0
+  shootingRate: 3
+  rotatingShot: 0
+  rotationValue: 5
+--- !u!4 &84288035
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84288033}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06996963, y: 5.02, z: 0.04048664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &90660947
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &930084181
 Transform:
   m_ObjectHideFlags: 0
@@ -316,7 +371,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 135
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -520,8 +575,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1048e8b933ea045bb55176670cd2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  numberOfShots: 0
   stuckToTurret: 1
-  shotPrefab: {fileID: 1024684886878596776, guid: 44f4c7381135a354c9fbc33e3857e74a, type: 3}
+  shotPrefabs: []
   shotSpeed: 5
   shootingRate: 0.01
   rotatingShot: 1
@@ -532,3 +588,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 1322078355}
   - {fileID: 930084181}
+  - {fileID: 84288035}
