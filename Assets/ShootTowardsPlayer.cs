@@ -74,18 +74,15 @@ public class ShootTowardsPlayer : MonoBehaviour
             intervalShot++;
             justShot = Time.time;
 
-            Debug.Log(interval);
-            //Debug.Log(intervalShot);
+
 
             if (intervalShot >= numberOfShotsBetweenInterval && !interval)
             {
-                Debug.Log("interval = true");
                 interval = true;
                 intervalShot = 0;   
             }
             else if(intervalShot >= shotInterval && interval)
-            {
-                Debug.Log("interval = false");
+            { 
                 interval = false; 
                 intervalShot = 0;
             }
