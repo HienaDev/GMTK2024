@@ -19,12 +19,9 @@ public class PhaseManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     private void Start()
