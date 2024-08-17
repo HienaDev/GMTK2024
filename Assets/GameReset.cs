@@ -12,9 +12,13 @@ public class GameReset : MonoBehaviour
     }
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene(currentScene);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
