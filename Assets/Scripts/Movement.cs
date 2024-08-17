@@ -39,14 +39,5 @@ public class Movement : MonoBehaviour
         moveInput.Normalize();
 
         rb2d.velocity = moveInput*moveSpeed;
-
-        rb2d.position = new Vector3
-        (
-            Mathf.Clamp(rb2d.position.x, minX + spriteHalfWidth, maxX - spriteHalfWidth),
-            Mathf.Clamp(rb2d.position.y, minY + spriteHalfWidth, maxY - spriteHalfWidth),
-            0.0f
-        );
-
-
     }
 }
