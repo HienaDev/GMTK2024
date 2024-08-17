@@ -12,8 +12,16 @@ public class Parry : MonoBehaviour
     private Boolean isImmune;
     private Animator animator;
     [SerializeField]
+    private GameObject gameOver;
+
+    [SerializeField]
     private float immunityTimer;
     private SpriteRenderer sr;
+
+    //bleedout timer
+    [SerializeField]
+    private float bleedoutTime = 8.0f;
+    private float elapsedTime = 0.0f;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +37,16 @@ public class Parry : MonoBehaviour
         if(Input.GetMouseButtonDown(1))
         {
             animator.SetTrigger("Parry");
+        }
+
+        if(isDying)
+        {
+            elapsedTime += Time.deltaTime;
+            if(elapsedTime >= bleedoutTime)
+            {
+                DeathLoop();
+                isDying=false;
+            }
         }
 
     }
@@ -78,6 +96,7 @@ public class Parry : MonoBehaviour
                 Debug.Log("Parried");
                 if(isDying)
                     isDying=false;
+                    elapsedTime=0.0f;
                     Debug.Log("is Not Dying");
             }
             else
@@ -92,12 +111,24 @@ public class Parry : MonoBehaviour
                         Debug.Log("isDying");
                     }else
                     {
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                        //TODO:Proper Death handling
+                        DeathLoop();
                         Debug.Log("Died, Reloading");
                     }
                 }
                 
             }
         }
+    }
+
+    private void DeathLoop()
+    {
+        gameOver.SetActive(true);
+        PhaseManager pm = FindFirstObjectByType<PhaseManager>();
+        pm.enabled = false;
+        Movement mv = FindFirstObjectByType<Movement>();
+        mv.StopMvmt();
+        mv.enabled = false;
+        
     }
 }

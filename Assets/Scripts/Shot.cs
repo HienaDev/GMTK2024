@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
+    [SerializeField] private bool destroyOnCollision = true;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,7 @@ public class Shot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        if(destroyOnCollision)
+            Destroy(gameObject);
     }
 }

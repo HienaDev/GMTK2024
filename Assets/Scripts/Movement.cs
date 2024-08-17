@@ -40,4 +40,9 @@ public class Movement : MonoBehaviour
 
         rb2d.velocity = moveInput*moveSpeed;
     }
+
+    public void StopMvmt()
+    {
+        rb2d.velocity = Vector3.zero;
+    }
 }

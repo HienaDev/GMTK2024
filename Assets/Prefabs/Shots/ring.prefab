@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7745156935909146638}
   - component: {fileID: 5088224257989982299}
   - component: {fileID: -6488873613326821504}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,3 +178,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0015224935cab384eb50981864121a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyOnCollision: 0
