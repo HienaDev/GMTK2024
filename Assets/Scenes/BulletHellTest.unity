@@ -713,6 +713,7 @@ MonoBehaviour:
   stuckToTurret: 1
   shotPrefabs: []
   shotSpeed: 5
+  randomRate: 0
   shootingRate: 0.01
   rotatingShot: 1
   rotationValue: 5
@@ -849,6 +850,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc3e71af0bf5813479eb1f168ed72741, type: 3}
+--- !u!1001 &2428624040511741416
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579382566643627258, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170459113331641931, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_Name
+      value: WaterHurricane
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170459113331641931, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a9c6b550b4e48c42929beb65d4912b8, type: 3}
 --- !u!1001 &4413077761266243144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1045,3 +1107,4 @@ SceneRoots:
   - {fileID: 5717937203718641848}
   - {fileID: 4413077761266243144}
   - {fileID: 7085624732661299552}
+  - {fileID: 2428624040511741416}
