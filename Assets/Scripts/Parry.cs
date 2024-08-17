@@ -65,6 +65,7 @@ public class Parry : MonoBehaviour
     public void DeactivateParry()
     {
         isParrying=false;
+        animator.ResetTrigger("Parry");
         Debug.Log("UnParry");
     }
 

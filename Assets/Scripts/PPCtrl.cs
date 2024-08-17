@@ -22,6 +22,8 @@ public class PPCtrl : MonoBehaviour
         volume.profile.TryGet(out ca);//0--100
 
         parry=FindObjectOfType<Parry>();
+
+        Debug.Log(parry);
     }
 
     // Update is called once per frame
