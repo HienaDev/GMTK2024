@@ -12,7 +12,8 @@ public class PhaseManager : MonoBehaviour
     [SerializeField] private bool randomPhase = false;
     private int numberOfPhase = 0;
     [SerializeField] private GameObject[] phases;
- 
+
+    [SerializeField] private float timeBetweenPhases = 3f;
 
     private void Awake()
     {
@@ -59,6 +60,14 @@ public class PhaseManager : MonoBehaviour
     public void PhaseEnded()
     {
         phaseHappening = false;
+        
+        StartCoroutine(CooldownTimer());
+    }
+
+    IEnumerator CooldownTimer()
+    {
+        yield return new WaitForSeconds(timeBetweenPhases);
+
         TriggerNewPhase();
     }
 
