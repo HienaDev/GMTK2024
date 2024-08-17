@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b1048e8b933ea045bb55176670cd2b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfShots: 5
+  numberOfShots: 10
   chanceOfParryable: 50
   stuckToTurret: 0
   shotPrefabs:
@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 5106616910350402246, guid: d51dea5f963485a4da49809d2852e09c, type: 3}
   shotSpeed: 0
   randomRate: 0
-  shootingRate: 3
+  shootingRate: 1.5
   rotatingShot: 0
   rotationValue: 5
   doAfterShooting:
