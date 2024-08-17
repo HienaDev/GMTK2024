@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfShots: 5
+  chanceOfParryable: 50
   stuckToTurret: 0
   shotPrefabs:
   - {fileID: 918832489618450682, guid: 07ea6e5c5423ca748acc4fa2a4a023c1, type: 3}
@@ -160,7 +161,7 @@ MonoBehaviour:
   - {fileID: 4492140589247540426, guid: 16b7341afc42b9849a7c778339e6d0f9, type: 3}
   - {fileID: 5106616910350402246, guid: d51dea5f963485a4da49809d2852e09c, type: 3}
   shotSpeed: 0
-  shootingRate: 3
+  shootingRate: 1
   rotatingShot: 0
   rotationValue: 5
 --- !u!4 &84288035
@@ -576,6 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfShots: 0
+  chanceOfParryable: 0
   stuckToTurret: 1
   shotPrefabs: []
   shotSpeed: 5

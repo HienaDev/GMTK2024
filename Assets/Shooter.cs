@@ -9,6 +9,8 @@ public class Shooter : MonoBehaviour
     [SerializeField] private int numberOfShots;
     private int shotsFired = 0;
 
+    [SerializeField, Range(0, 100)] private int chanceOfParryable;
+
     [SerializeField] private bool stuckToTurret;
     [SerializeField] private GameObject[] shotPrefabs;
     [SerializeField] private float shotSpeed = 10f;
@@ -32,6 +34,8 @@ public class Shooter : MonoBehaviour
     {
         if (Time.time - justShot > shootingRate && shotsFired < numberOfShots)
         {
+
+
             shotsFired++;
 
             justShot = Time.time;
@@ -45,6 +49,11 @@ public class Shooter : MonoBehaviour
             {
                 shotClone = Instantiate(shotPrefabs[Random.Range(0, shotPrefabs.Length)]);
             }
+
+
+
+            if (Random.Range(0, 100) < chanceOfParryable)
+                shotClone.AddComponent<Parryable>();
 
             Rigidbody2D shotClonrRb = shotClone.GetComponent<Rigidbody2D>();
             
