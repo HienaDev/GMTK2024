@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4333311920675157731}
   - component: {fileID: 21903314336871438}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TenShotExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
