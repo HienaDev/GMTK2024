@@ -15,7 +15,9 @@ public class Shooter : MonoBehaviour
     [SerializeField] private bool stuckToTurret;
     [SerializeField] private GameObject[] shotPrefabs;
     [SerializeField] private float shotSpeed = 10f;
+    [SerializeField] private bool randomRate = false;
     [SerializeField] private float shootingRate = 0.1f;
+    private float defaultShootingRate;
     private float justShot;
 
     [SerializeField] private bool rotatingShot;
@@ -32,6 +34,8 @@ public class Shooter : MonoBehaviour
     {
         shotRotationIncrement = new Vector3 (0, 0, rotationValue);
         shotRotation = Vector3.zero;
+
+        defaultShootingRate = shootingRate;
     }
 
     // Update is called once per frame
@@ -63,7 +67,7 @@ public class Shooter : MonoBehaviour
             Rigidbody2D shotCloneRb = shotClone.GetComponent<Rigidbody2D>();
             
             if(shotCloneRb != null)
-                shotCloneRb.velocity = transform.right * shotSpeed;
+                shotCloneRb.velocity = transform.up * shotSpeed;
 
             shotClone.transform.position = transform.position;
 
@@ -71,6 +75,9 @@ public class Shooter : MonoBehaviour
                 shotClone.GetComponentInChildren<ShotMother>().gameObject.transform.Rotate(shotRotation);
 
             shotRotation += shotRotationIncrement;
+
+            shootingRate = Random.Range(defaultShootingRate - defaultShootingRate / 5, defaultShootingRate + defaultShootingRate / 5);
+
 
             if (shotsFired >= numberOfShots)
             {
