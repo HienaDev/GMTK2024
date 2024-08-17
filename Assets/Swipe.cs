@@ -27,6 +27,11 @@ public class Swipe : MonoBehaviour
             transform.Rotate(new Vector3(0f, 0f, -rotationSpeed * Time.deltaTime));
 
         }
+        else
+        {
+            gameObject.transform.parent.gameObject.SetActive(false);
+            PhaseManager.Instance.PhaseEnded();
+        }
     }
 
 
