@@ -8,7 +8,7 @@ public class Parryable : MonoBehaviour
     void Start()
     {
 
-        GetComponent<SpriteRenderer>().color = new Color32(255, 7, 137, 100);
+        GetComponentInChildren<SpriteRenderer>().color = new Color32(255, 7, 137, 100);
 
     }
 

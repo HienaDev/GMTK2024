@@ -56,6 +56,7 @@ public class ShootVerticalShots : MonoBehaviour
             if (shotsFired >= numberOfShots)
             {
                 doneShooting = true;
+                PhaseManager.Instance.PhaseEnded();
             }
         }
 

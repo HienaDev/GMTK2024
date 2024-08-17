@@ -36,7 +36,7 @@ public class MinePhase : MonoBehaviour
         }
         else if (Time.time - startedPhase >= phaseDuration)
         {
-            PhaseManager.Instance.PhaseEnded();
+            
         }
     }
 }

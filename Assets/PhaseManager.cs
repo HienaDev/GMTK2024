@@ -27,7 +27,7 @@ public class PhaseManager : MonoBehaviour
 
     private void Start()
     {
-        TriggerNewPhase();
+        PhaseEnded();
     }
 
     // Update is called once per frame
