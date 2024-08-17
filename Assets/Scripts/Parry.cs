@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Parry : MonoBehaviour
 {
     private Boolean isParrying;
+    private Boolean isDying;
+    private Boolean isImmune;
     private Animator animator;
     
     // Start is called before the first frame update
@@ -25,6 +29,11 @@ public class Parry : MonoBehaviour
 
     }
 
+    public Boolean GetIsDying()
+    {
+        return isDying;
+    }
+
     public void ActivateParry()
     {
         isParrying=true;
@@ -37,11 +46,30 @@ public class Parry : MonoBehaviour
         Debug.Log("UnParry");
     }
 
-    //TODO:
-    //Detect collision with bullet
-    //Verify parry success, if is Parrying and collision has Parriable component
-    //Otherwise on hit set in dying state
-    //Black and White fade in for 10 secs or so
-    //Parry during that time removes dying state
-    //Otherwise die and reset
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(col.gameObject.GetComponent<Shot>())
+        {
+            if(col.gameObject.GetComponent<Parryable>() && isParrying)
+            {
+                Debug.Log("Parried");
+                if(isDying)
+                    isDying=false;
+                    Debug.Log("is Not Dying");
+            }
+            else
+            {
+                Debug.Log("Hit");
+                if(!isDying)
+                {
+                    isDying=true;
+                    Debug.Log("isDying");
+                }else
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    Debug.Log("Died, Reloading");
+                }
+            }
+        }
+    }
 }
