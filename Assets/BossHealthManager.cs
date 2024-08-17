@@ -24,7 +24,7 @@ public class BossHealthManager : MonoBehaviour
     {
         if (other.GetComponent<PufferShot>() != null)
         {
-            bossHealth -= 5;
+            bossHealth -= 1;
         }
     }
 
