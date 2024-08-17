@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerSwipe : MonoBehaviour
+public class TriggerHurricane : MonoBehaviour
 {
     [SerializeField] private GameObject swipeAttack;
 

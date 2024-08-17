@@ -18,7 +18,6 @@ public class ShootVerticalShots : MonoBehaviour
 
     private bool doneShooting = false;
 
-    [SerializeField] private UnityEvent doAfterShooting;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +56,7 @@ public class ShootVerticalShots : MonoBehaviour
             if (shotsFired >= numberOfShots)
             {
                 doneShooting = true;
-                doAfterShooting.Invoke();
+                PhaseManager.Instance.PhaseEnded();
             }
         }
 

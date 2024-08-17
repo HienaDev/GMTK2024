@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1810826006430122987}
   - component: {fileID: 4669769412078141128}
   - component: {fileID: 9120105649578678822}
-  - component: {fileID: 2847260234245286558}
+  - component: {fileID: 8941977761259209433}
   m_Layer: 0
   m_Name: HurricaneWarning
   m_TagString: Untagged
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2847260234245286558
+--- !u!114 &8941977761259209433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4680336906558026209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e37fc1d02027664f9aa6b38cab1e75e, type: 3}
+  m_Script: {fileID: 11500000, guid: 8319f2dc6406eaf40a54f89f6665ae9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   swipeAttack: {fileID: 8548039091903349701}

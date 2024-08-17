@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5922262948086664355}
-  - component: {fileID: 6266940787613566961}
+  - component: {fileID: 7479142649095962450}
   m_Layer: 0
   m_Name: HurricanePhase
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6266940787613566961
+--- !u!114 &7479142649095962450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1281867061117446534}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beecf6e69bfa39c41973fe28b47a4501, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c695613b484f544481886066c4f281d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   phaseDuration: 30
-  minePrefab: {fileID: 4680336906558026209, guid: 64604497151f627499b514d53d42d2fb, type: 3}
+  hurricanePrefab: {fileID: 4680336906558026209, guid: 64604497151f627499b514d53d42d2fb, type: 3}
   spawnRate: 2
   area: {x: 200, y: 110}

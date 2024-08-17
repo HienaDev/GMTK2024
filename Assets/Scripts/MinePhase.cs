@@ -16,6 +16,8 @@ public class MinePhase : MonoBehaviour
 
     private float startedPhase;
 
+    private bool phaseEnded = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,7 @@ public class MinePhase : MonoBehaviour
         else if (Time.time - startedPhase >= phaseDuration)
         {
             PhaseManager.Instance.PhaseEnded();
+            phaseEnded = true;
         }
     }
 }

@@ -13,13 +13,13 @@ GameObject:
   - component: {fileID: 151375478709255720}
   - component: {fileID: 5262750309315409201}
   - component: {fileID: 6450309244449639783}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FishShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1563979726419095912
 Transform:
   m_ObjectHideFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 103498657442201120}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 168, z: 0}
+  m_LocalPosition: {x: 0, y: 101, z: 0}
   m_LocalScale: {x: 96, y: 250, z: 96}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 7399838153506029911}
   - component: {fileID: 5350890612391260928}
   - component: {fileID: 962155313142426989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Warning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2436579439917217344}
   - component: {fileID: 8528864422546728903}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FishyShots
   m_TagString: Untagged
   m_Icon: {fileID: 0}

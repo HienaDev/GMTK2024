@@ -15,7 +15,7 @@ PrefabInstance:
     - target: {fileID: 2295131589316646268, guid: 07ea6e5c5423ca748acc4fa2a4a023c1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7d59d70457a0ddd4888ee517bf760564, type: 3}
+      objectReference: {fileID: 21300000, guid: 5d37bac92b8d3a34dbb465b3a6f8a894, type: 3}
     - target: {fileID: 5598675741787917080, guid: 07ea6e5c5423ca748acc4fa2a4a023c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -121,7 +121,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.96}
+    oldSize: {x: 1.09, y: 1.11}
     newSize: {x: 0.96, y: 0.96}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
