@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7929096346314355434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3835316778367628917}
+  - component: {fileID: 4567744830954335197}
+  m_Layer: 0
+  m_Name: WaveTurret
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3835316778367628917
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929096346314355434}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.06996963, y: 5.02, z: 0.04048664}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4567744830954335197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7929096346314355434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1048e8b933ea045bb55176670cd2b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfShots: 5
+  chanceOfParryable: 50
+  stuckToTurret: 0
+  shotPrefabs:
+  - {fileID: 918832489618450682, guid: 07ea6e5c5423ca748acc4fa2a4a023c1, type: 3}
+  - {fileID: 4874035531707543826, guid: b8a6e6d8ae7f69242996666bd3e93e51, type: 3}
+  - {fileID: 4492140589247540426, guid: 16b7341afc42b9849a7c778339e6d0f9, type: 3}
+  - {fileID: 5106616910350402246, guid: d51dea5f963485a4da49809d2852e09c, type: 3}
+  shotSpeed: 0
+  shootingRate: 1
+  rotatingShot: 0
+  rotationValue: 5
