@@ -1339,7 +1339,7 @@ MonoBehaviour:
   shotPrefabs:
   - {fileID: 641143770329336321, guid: 59a999e3c1948734c8ad6aee23979917, type: 3}
   shotSpeed: 200
-  shootingRate: 0.2
+  shootingRate: 0.1
   doAfterShooting:
     m_PersistentCalls:
       m_Calls:
@@ -1355,9 +1355,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  intervaleBetweenShots: 0
-  numberOfShotsBetweenInterval: 0
-  shotInterval: 0
+  intervaleBetweenShots: 1
+  numberOfShotsBetweenInterval: 20
+  shotInterval: 5
 --- !u!114 &8531697987426306652
 MonoBehaviour:
   m_ObjectHideFlags: 0

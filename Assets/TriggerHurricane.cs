@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerSwipe : MonoBehaviour
+public class TriggerHurricane : MonoBehaviour
 {
     [SerializeField] private GameObject swipeAttack;
 
@@ -10,6 +10,6 @@ public class TriggerSwipe : MonoBehaviour
     public void SwipeAttack()
     {
         swipeAttack.SetActive(true);
-        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        GetComponent<SpriteRenderer>().enabled = false;
     }
 }
