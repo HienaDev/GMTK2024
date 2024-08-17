@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class BossBar : MonoBehaviour
 {
-    [SerializeField] private Image Healthbar;
-    [SerializeField] private TextMeshProUGUI Healthtext;
-    [SerializeField] private float BossHealth;
-    [SerializeField] private float MaxHealth;
+    [SerializeField] private Image healthBar;
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private float bossHealth;
+    [SerializeField] private float massHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class BossBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Healthbar.fillAmount = Mathf.InverseLerp(0f,MaxHealth,BossHealth);
-        Healthtext.text = $"{BossHealth:f0}/{MaxHealth}";
+        healthBar.fillAmount = Mathf.InverseLerp(0f,massHealth,bossHealth);
+        healthText.text = $"{bossHealth:f0}/{massHealth}";
     }
 }
