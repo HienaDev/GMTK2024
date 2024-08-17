@@ -6,21 +6,30 @@ public class Swipe : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed;
     private float rotatedValue = 0;
+    private bool rotate = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rotatedValue < 200)
+
+        if (rotatedValue < 230)
         {
+            Debug.Log("rotation");
             rotatedValue += rotationSpeed * Time.deltaTime;
 
             transform.Rotate(new Vector3(0f, 0f, -rotationSpeed * Time.deltaTime));
+
         }
     }
+
+
+
+    
 }

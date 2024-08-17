@@ -9,6 +9,8 @@ public class MultipleShotExplosion : MonoBehaviour
     [SerializeField] private int numberOfShots;
     [SerializeField] private float shotSpeed = 100;
 
+    [SerializeField, Range(0, 100)] private int chanceOfParryable;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,10 @@ public class MultipleShotExplosion : MonoBehaviour
             shotClone.transform.position = transform.position;
             shotClone.transform.localEulerAngles = new Vector3(0, 0, (float)i / (float)numberOfShots * 360f);
             shotClone.GetComponent<Rigidbody2D>().velocity = shotClone.transform.up * shotSpeed;
+
+            if (Random.Range(0, 100) < chanceOfParryable)
+                shotClone.AddComponent<Parryable>();
+
         }
     }
 

@@ -82,6 +82,7 @@ public class Shooter : MonoBehaviour
             if (shotsFired >= numberOfShots)
             {
                 doneShooting = true;
+                PhaseManager.Instance.PhaseEnded();
                 doAfterShooting.Invoke();
             }
         }
