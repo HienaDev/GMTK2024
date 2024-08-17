@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,11 +23,17 @@ public class ShootTowardsPlayer : MonoBehaviour
 
     [SerializeField] private UnityEvent doAfterShooting;
 
+    [SerializeField] private bool intervaleBetweenShots = false;
+    [SerializeField] private int numberOfShotsBetweenInterval;
+    [SerializeField] private int shotInterval;
+    private bool interval;
+    private int intervalShot = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Movement>();
+        interval = false;
     }
 
     // Update is called once per frame
@@ -35,32 +42,52 @@ public class ShootTowardsPlayer : MonoBehaviour
         if (Time.time - justShot > shootingRate && !doneShooting)
         {
 
+            if(!interval)
+            {
+                shotsFired++;
+                
 
-            shotsFired++;
-
-            justShot = Time.time;
-            GameObject shotClone = null;
+                
+                GameObject shotClone = null;
 
 
                 shotClone = Instantiate(shotPrefabs[Random.Range(0, shotPrefabs.Length)]);
-            
+
+                if (Random.Range(0, 100) < chanceOfParryable)
+                    shotClone.AddComponent<Parryable>();
+
+                Rigidbody2D shotCloneRb = shotClone.GetComponent<Rigidbody2D>();
+
+                if (shotCloneRb != null)
+                    shotCloneRb.velocity = (player.transform.position - transform.position).normalized * shotSpeed;
 
 
+                shotClone.transform.position = transform.position;
 
-            if (Random.Range(0, 100) < chanceOfParryable)
-                shotClone.AddComponent<Parryable>();
+                if (shotsFired >= numberOfShots)
+                {
+                    doneShooting = true;
+                    doAfterShooting.Invoke();
+                }
+            }
 
-            Rigidbody2D shotCloneRb = shotClone.GetComponent<Rigidbody2D>();
+            intervalShot++;
+            justShot = Time.time;
 
-            if (shotCloneRb != null)
-                shotCloneRb.velocity = (player.transform.position - transform.position).normalized * shotSpeed;
+            Debug.Log(interval);
+            //Debug.Log(intervalShot);
 
-            shotClone.transform.position = transform.position;
-
-            if (shotsFired >= numberOfShots)
+            if (intervalShot >= numberOfShotsBetweenInterval && !interval)
             {
-                doneShooting = true;
-                doAfterShooting.Invoke();
+                Debug.Log("interval = true");
+                interval = true;
+                intervalShot = 0;   
+            }
+            else if(intervalShot >= shotInterval && interval)
+            {
+                Debug.Log("interval = false");
+                interval = false; 
+                intervalShot = 0;
             }
                 
         }
