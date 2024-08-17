@@ -48,8 +48,5 @@ MonoBehaviour:
   chanceOfParryable: 20
   shotPrefabs:
   - {fileID: 6115252943132412077, guid: 0479257cab7de464e91c5f8658921341, type: 3}
-  shotSpeed: 1000
+  shotSpeed: 500
   shootingRate: 0.4
-  doAfterShooting:
-    m_PersistentCalls:
-      m_Calls: []
