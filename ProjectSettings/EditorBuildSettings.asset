@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/BulletHellTest.unity
+    guid: db9a5dd013704b143aa385ccd7047ba2
   m_configObjects: {}

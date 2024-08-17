@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfShots: 10
-  chanceOfParryable: 50
+  chanceOfParryable: 25
   stuckToTurret: 0
   shotPrefabs:
   - {fileID: 918832489618450682, guid: 07ea6e5c5423ca748acc4fa2a4a023c1, type: 3}
