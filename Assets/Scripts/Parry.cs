@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEditor.Experimental.GraphView;
 
 public class Parry : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Parry : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Space))
         {
             animator.SetTrigger("Parry");
         }
@@ -100,10 +101,13 @@ public class Parry : MonoBehaviour
             if(col.gameObject.GetComponent<Parryable>() && isParrying)
             {
                 Debug.Log("Parried");
-                if(isDying)
-                    isDying=false;
+                if (isDying)
+                    isDying = false;
+                else
+                    StartCoroutine(IncreaseShootingRate());
                     elapsedTime=0.0f;
                     Debug.Log("is Not Dying");
+               
             }
             else
             {

@@ -198,6 +198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2581528808708661719, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1343506106}
+    - targetCorrespondingSourceObject: {fileID: 2581528808708661719, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1343506114}
   m_SourcePrefab: {fileID: 100100000, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
 --- !u!1 &130848648
 GameObject:
@@ -1095,9 +1098,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1eb934b0ba2e7499edf2de7d372744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootingRate: 0.2
+  shootingRate: 0.4
   shotPrefab: {fileID: 641143770329336321, guid: f5a4c9a316b045f46a212e6b3764cefb, type: 3}
   shootingSpeed: 200
+--- !u!114 &1343506114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343506098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1b97c5c958eda4fb81f6375449991e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsHit:
+  - {fileID: 8300000, guid: 9308015cea64ee645b168d4a8dd120b1, type: 3}
+  clipsInflate:
+  - {fileID: 8300000, guid: 003b83d818dd3c740a7dfe879009e601, type: 3}
 --- !u!1 &1421766155
 GameObject:
   m_ObjectHideFlags: 0

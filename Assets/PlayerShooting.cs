@@ -31,6 +31,8 @@ public class PlayerShooting : MonoBehaviour
             shotClone.transform.position = transform.position;
             shotClone.GetComponent<Rigidbody2D>().velocity = transform.up * shootingSpeed;
         }
+
+        Debug.Log(shootingRate);
     }
 
     public void IncreaseShotSpeed(float multiplier)
