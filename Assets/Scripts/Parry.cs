@@ -22,13 +22,17 @@ public class Parry : MonoBehaviour
     [SerializeField]
     private float bleedoutTime = 8.0f;
     private float elapsedTime = 0.0f;
-    
+
+    private PlayerShooting playerShooting;
+
     // Start is called before the first frame update
     void Start()
     {
         isParrying=false;
         animator = gameObject.GetComponent<Animator>();
         sr = gameObject.GetComponent<SpriteRenderer>();
+
+        playerShooting = GetComponent<PlayerShooting>();    
     }
 
     // Update is called once per frame
@@ -39,16 +43,17 @@ public class Parry : MonoBehaviour
             animator.SetTrigger("Parry");
         }
 
-        if(isDying)
-        {
-            elapsedTime += Time.deltaTime;
-            if(elapsedTime >= bleedoutTime)
-            {
-                DeathLoop();
-                isDying=false;
-            }
-        }
+        //if(isDying)
+        //{
+        //    elapsedTime += Time.deltaTime;
+        //    if(elapsedTime >= bleedoutTime)
+        //    {
+        //        DeathLoop();
+        //        isDying=false;
+        //    }
+        //}
 
+        animator.SetBool("IsDying", isDying);
     }
 
     public Boolean GetIsDying()
@@ -120,6 +125,13 @@ public class Parry : MonoBehaviour
                 
             }
         }
+    }
+
+    IEnumerator IncreaseShootingRate()
+    {
+        playerShooting.IncreaseShotSpeed(1.5f);
+        yield return new WaitForSeconds(5f);
+        playerShooting.DecreaseShotSpeed(1.5f);
     }
 
     private void DeathLoop()

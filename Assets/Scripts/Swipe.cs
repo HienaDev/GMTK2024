@@ -27,10 +27,12 @@ public class Swipe : MonoBehaviour
             transform.Rotate(new Vector3(0f, 0f, -rotationSpeed * Time.deltaTime));
 
         }
-        else
+        else if (!rotate)
         {
             gameObject.transform.parent.gameObject.SetActive(false);
+            Debug.Log("swipe triggered new phase");
             PhaseManager.Instance.PhaseEnded();
+            rotate = true;
         }
     }
 

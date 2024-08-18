@@ -31,13 +31,15 @@ public class PPCtrl : MonoBehaviour
     {   
         if(parry.GetIsDying())
         {
-            vt.intensity.value = Mathf.SmoothDamp(vt.intensity.value, 0.8f, ref iSpeed, 5f);
-            ca.saturation.value = Mathf.SmoothDamp(ca.saturation.value, -100f, ref iSpeed2, 5f);
+            vt.intensity.value = Mathf.SmoothDamp(vt.intensity.value, 0.4f, ref iSpeed, 10f);
+            ca.saturation.value = Mathf.SmoothDamp(ca.saturation.value, -100f, ref iSpeed2, 10f);
+            ca.colorFilter.value = new Color32(250, 164, 164, 255);
         }
         else
         {
             vt.intensity.value = 0;
             ca.saturation.value = 0;
+            ca.colorFilter.value = Color.white;
         }
     }
 

@@ -13,6 +13,7 @@ public class MinePhase : MonoBehaviour
     private float justSpawned;
     [SerializeField] private Vector2 area = new Vector2(200, 110);
 
+    [SerializeField] private bool triggerNextPhase = true;
 
     private float startedPhase;
 
@@ -36,8 +37,9 @@ public class MinePhase : MonoBehaviour
 
 
         }
-        else if (Time.time - startedPhase >= phaseDuration && !phaseEnded)
+        else if (Time.time - startedPhase >= phaseDuration && !phaseEnded && triggerNextPhase)
         {
+            Debug.Log("mine triggered new phase");
             PhaseManager.Instance.PhaseEnded();
             phaseEnded = true;
         }

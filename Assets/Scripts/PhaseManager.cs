@@ -11,7 +11,9 @@ public class PhaseManager : MonoBehaviour
 
     [SerializeField] private bool randomPhase = false;
     private int numberOfPhase = 0;
-    [SerializeField] private GameObject[] phases;
+    [SerializeField] private GameObject[] phases1;
+    [SerializeField] private GameObject[] phases2;
+    private bool phase1 = true;
 
     [SerializeField] private float timeBetweenPhases = 3f;
 
@@ -43,24 +45,48 @@ public class PhaseManager : MonoBehaviour
 
             if(randomPhase)
             {
-                Instantiate(phases[Random.Range(0, phases.Length)]);
+                Instantiate(phases1[Random.Range(0, phases1.Length)], transform);
             }
             else
             {
-                Instantiate(phases[numberOfPhase]);
-                numberOfPhase++;
-                if(numberOfPhase == phases.Length)
-                    numberOfPhase = 0;
+                if(phase1)
+                {
+                    Instantiate(phases1[numberOfPhase], transform);
+                    numberOfPhase++;
+                    if (numberOfPhase == phases1.Length)
+                        numberOfPhase = 0;
+                }
+                else if (!phase1)
+                {
+                    Instantiate(phases2[numberOfPhase], transform);
+                    numberOfPhase++;
+                    if (numberOfPhase == phases2.Length)
+                        numberOfPhase = 0;
+                }
+
             }
             
             phaseHappening = true;
         }
     }
 
+    public void Trigger2ndPhase()
+    {
+        phase1 = false;
+        numberOfPhase = 0;
+
+        foreach (Transform child in transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        PhaseEnded();
+    }
+
     public void PhaseEnded()
     {
         phaseHappening = false;
-        
+        Debug.Log("trigger new phase");
         StartCoroutine(CooldownTimer());
     }
 

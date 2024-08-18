@@ -53,10 +53,11 @@ public class ShootVerticalShots : MonoBehaviour
 
             shotClone.transform.position = new Vector2(randomX, shotClone.transform.position.y);
 
-            if (shotsFired >= numberOfShots)
+            if (shotsFired >= numberOfShots && !doneShooting)
             {
                 doneShooting = true;
-                PhaseManager.Instance.PhaseEnded();
+                Debug.Log("vertical shots triggered new phase");
+                //PhaseManager.Instance.PhaseEnded();
             }
         }
 

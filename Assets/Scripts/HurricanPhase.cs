@@ -38,6 +38,7 @@ public class HurricanPhase : MonoBehaviour
         }
         else if (Time.time - startedPhase >= phaseDuration && !phaseEnded)
         {
+            Debug.Log("hurrican triggered new phase");
             PhaseManager.Instance.PhaseEnded();
             phaseEnded = true;
         }

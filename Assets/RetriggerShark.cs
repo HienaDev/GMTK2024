@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Parryable : MonoBehaviour
+public class RetriggerShark : MonoBehaviour
 {
+
+    private GameObject shark;
+
     // Start is called before the first frame update
     void Start()
     {
-
-        GetComponentInChildren<SpriteRenderer>().color = new Color32(255, 7, 137, 255);
-
+        shark = FindObjectOfType<Shark>().gameObject;
     }
 
     // Update is called once per frame
@@ -17,4 +18,6 @@ public class Parryable : MonoBehaviour
     {
         
     }
+
+    public void TriggerShark() => shark.GetComponent<Animator>().SetTrigger("BackToIdle");
 }

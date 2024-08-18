@@ -29,10 +29,12 @@ public class Shooter : MonoBehaviour
 
     [SerializeField] private UnityEvent doAfterShooting;
 
+    [SerializeField] private bool triggerNewPhase = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        shotRotationIncrement = new Vector3 (0, 0, rotationValue);
+        shotRotationIncrement = new Vector3(0, 0, rotationValue);
         shotRotation = Vector3.zero;
 
         defaultShootingRate = shootingRate;
@@ -50,7 +52,7 @@ public class Shooter : MonoBehaviour
             justShot = Time.time;
             GameObject shotClone = null;
 
-            if(stuckToTurret)
+            if (stuckToTurret)
             {
                 shotClone = Instantiate(shotPrefabs[Random.Range(0, shotPrefabs.Length)], transform);
             }
@@ -65,13 +67,13 @@ public class Shooter : MonoBehaviour
                 shotClone.AddComponent<Parryable>();
 
             Rigidbody2D shotCloneRb = shotClone.GetComponent<Rigidbody2D>();
-            
-            if(shotCloneRb != null)
+
+            if (shotCloneRb != null)
                 shotCloneRb.velocity = transform.up * shotSpeed;
 
             shotClone.transform.position = transform.position;
 
-            if (rotatingShot) 
+            if (rotatingShot)
                 shotClone.GetComponentInChildren<ShotMother>().gameObject.transform.Rotate(shotRotation);
 
             shotRotation += shotRotationIncrement;
@@ -79,13 +81,17 @@ public class Shooter : MonoBehaviour
             shootingRate = Random.Range(defaultShootingRate - defaultShootingRate / 5, defaultShootingRate + defaultShootingRate / 5);
 
 
-            if (shotsFired >= numberOfShots)
+            if (shotsFired >= numberOfShots && !doneShooting)
             {
                 doneShooting = true;
-                PhaseManager.Instance.PhaseEnded();
+                Debug.Log("shooter triggered new phase");
+
+                if (triggerNewPhase)
+                    PhaseManager.Instance.PhaseEnded(); 
+
                 doAfterShooting.Invoke();
             }
         }
-        
+
     }
 }

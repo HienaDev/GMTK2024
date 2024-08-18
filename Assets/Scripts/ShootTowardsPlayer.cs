@@ -24,6 +24,7 @@ public class ShootTowardsPlayer : MonoBehaviour
     [SerializeField] private UnityEvent doAfterShooting;
 
     [SerializeField] private bool intervaleBetweenShots = false;
+    [SerializeField] private bool intervaleIsParries = false;
     [SerializeField] private int numberOfShotsBetweenInterval;
     [SerializeField] private int shotInterval;
     private bool interval;
@@ -42,7 +43,7 @@ public class ShootTowardsPlayer : MonoBehaviour
         if (Time.time - justShot > shootingRate && !doneShooting)
         {
 
-            if(!interval)
+            if(!interval || (interval && intervaleIsParries))
             {
                 shotsFired++;
                 
@@ -53,7 +54,7 @@ public class ShootTowardsPlayer : MonoBehaviour
 
                 shotClone = Instantiate(shotPrefabs[Random.Range(0, shotPrefabs.Length)]);
 
-                if (Random.Range(0, 100) < chanceOfParryable)
+                if (Random.Range(0, 100) < chanceOfParryable || (interval && intervaleIsParries))
                     shotClone.AddComponent<Parryable>();
 
                 Rigidbody2D shotCloneRb = shotClone.GetComponent<Rigidbody2D>();
@@ -64,8 +65,9 @@ public class ShootTowardsPlayer : MonoBehaviour
 
                 shotClone.transform.position = transform.position;
 
-                if (shotsFired >= numberOfShots)
+                if (shotsFired >= numberOfShots && !doneShooting)
                 {
+                    Debug.Log("shoot towards player triggered new phase");
                     doneShooting = true;
                     PhaseManager.Instance.PhaseEnded();
                     doAfterShooting.Invoke();

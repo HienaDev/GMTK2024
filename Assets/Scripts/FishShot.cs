@@ -10,8 +10,12 @@ public class FishShot : MonoBehaviour
 
     public void ActivateShot()
     {
-        fishShot.SetActive(true);
-        fishShot.GetComponent<Rigidbody2D>().velocity = shotSpeed;
+        if(fishShot != null)
+        {
+            fishShot.SetActive(true);
+            fishShot.GetComponent<Rigidbody2D>().velocity = shotSpeed;
+        }
+        
     }
 
     public void SetShotSpeed(Vector2 speed) => shotSpeed = speed;
