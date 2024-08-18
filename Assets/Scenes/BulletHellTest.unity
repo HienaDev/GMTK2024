@@ -176,6 +176,14 @@ PrefabInstance:
       value: Pufferfish
       objectReference: {fileID: 0}
     - target: {fileID: 6235437269051109623, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235437269051109623, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6235437269051109623, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1336207584, guid: fef186822981bee46bbf38e12e6b9030, type: 3}
