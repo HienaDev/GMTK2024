@@ -514,11 +514,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1069054442064275451, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2601775000153402532, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690143241326226757, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 6179712276732829384, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -559,6 +563,17 @@ PrefabInstance:
     - target: {fileID: 6179712276732829384, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697378690754836089, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581046135933358237, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
+      propertyPath: m_text
+      value: 'Press Q to quit to Menu
+
+
+        Press ENTER to Restart'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: immunityTimer
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7627167390042921042, guid: 32a92318b193a364fbfca366c0b9ccfa, type: 3}
+      propertyPath: m_Radius
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -741,6 +745,13 @@ PrefabInstance:
     - target: {fileID: 8202470295317698826, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581046135933358237, guid: 090f9dbae441ec34a8451ca842cdcb0a, type: 3}
+      propertyPath: m_text
+      value: 'Press Q to quit to Menu
+
+
+        Press SPACE to Restart'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
