@@ -146,6 +146,7 @@ public class Parry : MonoBehaviour
         Movement mv = FindFirstObjectByType<Movement>();
         mv.StopMvmt();
         mv.enabled = false;
+        Destroy(gameObject);
         
     }
 }
