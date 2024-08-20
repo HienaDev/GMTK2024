@@ -8,6 +8,7 @@ public class MineExplosion : MonoBehaviour
     [SerializeField] private float scaleTarget = 64;
     private float transparency;
     private float scale;
+    private Animator anim;
 
     private SpriteRenderer spriteRenderer;
 
@@ -18,6 +19,7 @@ public class MineExplosion : MonoBehaviour
     {
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         StartCoroutine(TriggerMine());
     }
@@ -35,10 +37,13 @@ public class MineExplosion : MonoBehaviour
         }
 
         GameObject bomb = Instantiate(sixShotExplosion);
+        anim.SetTrigger("Boom");
         bomb.transform.position = transform.position;
 
+    }
+
+    public void Exploded()
+    {
         Destroy(gameObject, 0.1f);
-
-
     }
 }
